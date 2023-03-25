@@ -1,5 +1,3 @@
-// display today's date and time, from https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-1.php
-
 const events = [];
 
 // display date and time
@@ -12,15 +10,15 @@ function displayDateAndTime() {
 
 // add event to list of events
 function addEvent() {
-    var eventTitle = document.getElementById('eventTitle').value;
-    var eventMonth = document.getElementById('eventMonth').value;
-    var eventDay = document.getElementById('eventDay').value;
-    var eventTime = document.getElementById('eventTime').value;
+    var eventTitle = document.getElementById('eventTitleInput').value;
+    var eventMonth = document.getElementById('eventMonthInput').value;
+    var eventDay = document.getElementById('eventDayInput').value;
+    //var eventTime = document.getElementById('eventTimeInput').value;
 
-    const event = {title:eventTitle, month:eventMonth, day:eventDay, time:eventTime};
+    const event = {title:eventTitle, month:eventMonth, day:eventDay};
 
     events.push(event);
-    return "New Event Added: " + eventTitle + ", at " + eventTime + " on" + eventDate;
+    return "New Event Added: " + eventTitle + " on" + eventMonth + " " + eventDay;
 }
 
 
@@ -44,6 +42,7 @@ function eventPassed(event) {
     return today.getTime() >= eventDay.getTime()
 }
 
+// removes old events from list of events
 function removeOldEvents() {
     for (var i = 0; i < events.length; i++) {
         var e = events[i];
@@ -51,9 +50,10 @@ function removeOldEvents() {
             events.splice(i, 1);
         }
     }
-
 }
 
-document.getElementById('addEventButton').addEventListener('click', addEvent);
-document.getElementById('displayAllUpcomingEvents').innerText = displayEvents();
+function showDaySummary() {
+    //
+}
+
 
