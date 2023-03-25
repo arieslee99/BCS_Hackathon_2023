@@ -1,4 +1,7 @@
 // display today's date and time, from https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-1.php
+
+const events = [];
+
 function displayDateAndTime() {
     var today = new Date();
     var day = today.getDay();
@@ -34,7 +37,21 @@ function addEvent() {
     var eventDate = document.getElementById('eventDate').value;
     var eventTime = document.getElementById('eventTime').value;
 
+    const event = {title:eventTitle, date:eventDate, time:eventTime};
+
+    events.push(event);
     return "New Event Added: " + eventTitle + ", at " + eventTime + " on" + eventDate;
+}
+
+function displayEvents() {
+    var eventsAsString = "";
+    for (var i = 0; events.length; i++) {
+        var e = events(i);
+        var stringToAdd = "Title: " + e.title + "When: " + e.date + ", at " + e.time;
+        eventsAsString.concat(stringToAdd);
+
+    }
+    return eventsAsString;
 }
 
 
