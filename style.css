@@ -1,6 +1,7 @@
 body{
     background-color: aliceblue;
     @import url()
+    font-family: 'Varela Round', sans-serif;
 }
 
 .alert {
@@ -16,5 +17,35 @@ body{
 
 .alert .fa-exclamation-circle {
     position: absolute;
-    left: 20px;
+    left: 30px;
+    top: 22px;
+    color:#ffa502
+}
+
+.alert .msg {
+    padding: 0px 40px;
+    font-size: 16px;
+    font-family: 'Varela Round', sans-serif;
+    
+
+    
+}
+
+.alert .close-btn {
+    position: absolute;
+    background: #ffd080;
+    padding: 20px 20px;
+    right: 0px;
+    top: 0px;
+    transform: translateY(0%);
+    cursor: pointer;
+}
+
+.alert .close-btn:hover {
+    background: #ffc766;
+}
+
+.close-btn .fa-times{
+    color: #ce8500;
+    font-size: 17px;
 }
