@@ -28,3 +28,5 @@ function displayDateAndTime() {
     }
     console.log("Current Time : " + hour + prepand + " : " + minute + " : " + second);
 }
+
+
