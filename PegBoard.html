@@ -7,15 +7,19 @@
     <title>Notes on Pegboard</title>
     <link rel="stylesheet" href="Pegboard.css">
     <script src="scriptForTeamboard.js">defer</script>
+    <link rel="stylesheet" href="/Teamboard/Teamboard.css">
 </head>
 <body>
+    <h1><span class = "styling"> TODO </h1>
+    
+    <button class="add-note" id="button">+</button>
+    <button class="add-note" id="button">-</button>
     <div id="app">
         <textarea class="bubble">sample task</textarea>
         <textarea class="bubble">sample task</textarea>
         <textarea class="bubble">sample task</textarea>
         <textarea class="bubble">sample task</textarea>
         <textarea class="bubble">sample task</textarea>
-        <button class="add-note" id="button">+</button>
         <script>
             function addNote() {
                 var textarea = document.createElement("textarea");
@@ -24,5 +28,4 @@
             document.getElementById("button").addEventListener('click', addNote);
         </script>
     </div>
-</body>
 </html>
