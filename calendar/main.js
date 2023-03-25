@@ -41,6 +41,7 @@ function displayEvents() {
     return eventsAsString;
 }
 
+// given specfified day, display only events on that day
 function showDaySummary(day) {
     var eventsOnDay = "";
     var stringToAdd = "";
@@ -53,7 +54,6 @@ function showDaySummary(day) {
     
     document.getElementById('allEvents').innerText = "";
     document.getElementById('allEvents').innerText = eventsOnDay;
-    console.log(eventNames);
 }
 
 
