@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: darksalmon
+    background: turquoise;
 }
 
 #app {
@@ -20,12 +20,12 @@ body {
     height: 100px;
     width: 100px;
     border-radius: 10px;
-    border-color: darksalmon;
+    border-color: turquoise;
     gap: 100px;
 }
 
 .add-note:active {
-    border-color:indianred;
+    border-color: teal
 }
 
 

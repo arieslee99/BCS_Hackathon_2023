@@ -1,34 +1,35 @@
-const eventNames = ["doctor", "dentist", "party"];
-const eventMonths = ["March", "March", "March"];
-const eventDays = [3, 5, 5];
-const eventNamesPast = [];
-const eventMonthsPast = [];
-const eventDaysPast = [];
-const oldEvents = "";
+const eventNames = [];
+const eventMonths = [];
+const eventDays = [];
+
+
 
 // display date and time
 function displayDateAndTime() {
     var today = new Date();
     var dayList = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
     var monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    return dayList[today.getDay()] + ", " + monthList[today.getMonth()] + " " + today.getUTCDate() + ", " + today.getHours() + ":" + today.getMinutes();
+    if ((today.getMinutes() == 0) || (today.getMinutes() == 1) || (today.getMinutes() == 2) || (today.getMinutes() == 3) || (today.getMinutes() == 4) || (today.getMinutes() == 5)
+    || (today.getMinutes() == 6) || (today.getMinutes() == 7) || (today.getMinutes() == 8) || (today.getMinutes() == 9)) {
+        return dayList[today.getDay()] + ", " + monthList[today.getMonth()] + " " + today.getUTCDate() + ", " + today.getHours() + ":0" + today.getMinutes();
+    } else {
+        return dayList[today.getDay()] + ", " + monthList[today.getMonth()] + " " + today.getUTCDate() + ", " + today.getHours() + ":" + today.getMinutes();
+    }
 }
 
 // add event to list of events
 function addEvent() {
-
     var eventTitle = document.getElementById('eventTitleInput').value;
-    var eventMonth = document.getElementById('months').value;
-    var eventDay = document.getElementById('days2').value;
+    var months = document.getElementById('months');
+    var eventMonth = months.options[months.selectedIndex].text;
+    var days = document.getElementById('days2');
+    var eventDay = days.options[days.selectedIndex].text;
 
     eventNames.push(eventTitle);
     eventMonths.push(eventMonth);
     eventDays.push(eventDay);
     
-    // document.getElementById('allEvents').innerText = displayEvents();
-
 }
-
 
 // display all events in list as a string
 function displayEvents() {
@@ -40,41 +41,17 @@ function displayEvents() {
     return eventsAsString;
 }
 
-// return true if event has passed
-function eventPassed(event) {
-    today = new Date();
-    eventDay = new Date(2023, event.month, event.day);
-
-    return today.getTime() >= eventDay.getTime()
-}
-
-// // removes old events from list of events
-// function removeOldEvents() {
-//     for (var i = 0; i < eventNames.length; i++) {
-//         if (eventPassed(e)) {
-//             eventNamesPast.push(eventNames[i])
-//             eventMonthsPast.push(eventMonths[i]);
-//             eventDaysPast.push(eventDays[i]);
-//             var stringToAdd = "Title: " + eventNames[i] + ". When: " + eventMonths[i] + " " + eventDays[i] + "\n";
-//             eventNames.splice(i, 1);
-//             eventMonths.splice(i, 1);
-//             eventDays.splice(i, 1);
-//             oldEvents = oldEvents.concat(stringToAdd);
-//         }
-//     }
-//     return oldEvents;
-// }
-
+// given specfified day, display only events on that day
 function showDaySummary(day) {
     var eventsOnDay = "";
     var stringToAdd = "";
     for (var i = 0; i < eventNames.length; i++) {
-        if (eventDays[i] === day) {
+        if (eventDays[i] == day) {
             stringToAdd = "Event: " + eventNames[i] + " on March " + eventDays[i] + "\n"; 
             eventsOnDay = eventsOnDay.concat(stringToAdd);
         }
     }
-    //return eventsOnDay;
+    
     document.getElementById('allEvents').innerText = "";
     document.getElementById('allEvents').innerText = eventsOnDay;
 }
