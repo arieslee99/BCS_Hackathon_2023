@@ -1,6 +1,24 @@
-console.log("Hello");
-function taskCollection() {
-    var taskName = document.getElementById('task').value;
-    document.getElementById("output").innerText = taskName;
+
+const pegboard = document.getElementById("app");
+
+function getNotes() {
+
 }
-document.getElementById('button').addEventListener('click',taskCollection);
+
+function saveNotes(notes) {
+
+}
+
+function addNote(id, content) {
+     const noteObject = {
+        
+     }
+}
+
+function updateNote(id, newContent) {
+
+}
+
+function deleteNote(id, element) {
+
+}
