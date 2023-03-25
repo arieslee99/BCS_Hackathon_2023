@@ -7,13 +7,13 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     padding: 24px;
-    gap: 24px
+    gap: 24px;
 }
 
 .sticky {
     height: 200px;
     border: none;
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 .add-note {
@@ -22,7 +22,6 @@ body {
     border-radius: 10px;
     border-color: darksalmon;
     gap: 100px;
-    display:
 }
 
 .add-note:active {
@@ -31,7 +30,6 @@ body {
 
 
 .bubble {
-    display: grid;
     padding: 30px;
     width: 200px;
     height: 200px;
@@ -40,4 +38,9 @@ body {
     border-radius: 100px;
     text-align: center;
     border: none;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
