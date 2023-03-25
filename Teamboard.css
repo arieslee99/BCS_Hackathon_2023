@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:darksalmon;
+    height: 100%;
+}
+
+hi{
+    font-size: 3rem;
+    font-weight: 50;
+    margin: 1rem 0 3rem;
+    text-align: center;
+    color: black;
+    font-family: 'Hind',sans-serif;
+}
+
+.stylying{
+    font-weight: 800;
+    color: lime;
+}
+
+.input_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.input_div.input{
+
+}
