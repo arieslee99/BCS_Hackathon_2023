@@ -1,6 +1,10 @@
-const eventNames = ["dentist", "doctor"];
-const eventDays = [12, 22];
-//const events = [1,2,3];
+const eventNames = [];
+const eventMonths = [];
+const eventDays = [];
+const eventNamesPast = [];
+const eventMonthsPast = [];
+const eventDaysPast = [];
+const oldEvents = "";
 
 // display date and time
 function displayDateAndTime() {
@@ -13,37 +17,26 @@ function displayDateAndTime() {
 // add event to list of events
 function addEvent() {
 
-    // buttons = document.getElementsByTagName("button"); // list of all buttons
-    // for (var i = 0; i <= buttons.length; i += 1) {
-    //     buttons[i].onclick = function(e) {
-    //         alert(this.id);
-    //     };
-    // }
-
     var eventTitle = document.getElementById('eventTitleInput').value;
-    var eventMonth = document.getElementById('eventMonthInput').value;
-    var eventDay = document.getElementById('eventDayInput').value;
-    //var eventTime = document.getElementById('eventTimeInput').value;
+    var eventMonth = document.getElementById('months').value;
+    var eventDay = document.getElementById('days').value;
 
-    const event = {title:eventTitle, month:eventMonth, day:eventDay};
+    eventNames.push(eventTitle);
+    eventMonths.push(eventMonth);
+    eventDays.push(eventDay);
+    
+    document.getElementById('allEvents').innerText = displayEvents();
 
-    events.push(event);
-    return eventTitle;
-    //return "New Event Added: " + eventTitle + " on" + eventMonth + " " + eventDay;
 }
 
 
 // display all events in list as a string
 function displayEvents() {
     var eventsAsString = "";
-    // for (var i = 0; i < eventNames.length; i++) {
-    //     var e = events[i];
-    //     var stringToAdd = "Title: " + e.title + "When: " + e.month + " " + e.day + ", at " + e.time + "\n";
-    //     eventsAsString.concat(stringToAdd);
-
-    // }
-    eventsAsString.
-    eventsAsString.concat("hi");
+    for (var i = 0; i < eventNames.length; i++) {
+        var stringToAdd = "Title: " + eventNames[i] + ". When: " + eventMonths[i] + " " + eventDays[i] + "\n";
+        eventsAsString = eventsAsString.concat(stringToAdd);
+    }
     return eventsAsString;
 }
 
@@ -58,20 +51,27 @@ function eventPassed(event) {
 // removes old events from list of events
 function removeOldEvents() {
     for (var i = 0; i < eventNames.length; i++) {
-        var e = events[i];
         if (eventPassed(e)) {
-            events.splice(i, 1);
+            eventNamesPast.push(eventNames[i])
+            eventMonthsPast.push(eventMonths[i]);
+            eventDaysPast.push(eventDays[i]);
+            var stringToAdd = "Title: " + eventNames[i] + ". When: " + eventMonths[i] + " " + eventDays[i] + "\n";
+            eventNames.splice(i, 1);
+            eventMonths.splice(i, 1);
+            eventDays.splice(i, 1);
+            oldEvents = oldEvents.concat(stringToAdd);
         }
     }
+    return oldEvents;
 }
 
 function showDaySummary(day) {
     var eventsOnDay = "";
     var stringToAdd = "";
-    for (var i = 0; i < events.length; i++) {
-        if (events[i].day === day) {
-            stringToAdd = "Event: " + eventTitle + " on" + eventMonth + " " + eventDay; 
-            eventsOnDay.push(stringToAdd);
+    for (var i = 0; i < eventNames.length; i++) {
+        if (eventDays[i] === day) {
+            stringToAdd = "Event: " + eventNames[i] + " on March " + eventDays[i] + "\n"; 
+            eventsOnDay = eventsOnDay.concat(stringToAdd);
         }
     }
     return eventsOnDay;
