@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    background: darksalmon
+}
+
+#app {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    padding: 24px;
+    gap: 24px
+}
+
+.sticky {
+    height: 200px;
+    border: none;
+    border-radius: 10px
+}
+
+.add-note {
+    height: 100px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    gap: 100px;
+}
+
+.bubble {
+    display: grid;
+    padding: 30px;
+    width: 200px;
+    height: 200px;
+    line-height: 50px;
+    gap: 100px;
+    border-radius: 100px;
+    text-align: center;
+    border: none;
+}
