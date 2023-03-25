@@ -33,10 +33,10 @@
 </ul>
 
 <ul class="days">  
-  <li><button onclick="showDaySummary(1)">1</button></li>
-  <li><button onclick="showDaySummary(2)">2</button></li>
-  <li><button onclick="showDaySummary(3)">3</button></li>
-  <li><button onclick="showDaySummary(4)">4</button></li>
+  <li><button onclick=showDaySummary(1)>1</button></li>
+  <li><button onclick=showDaySummary(2)>2</button></li>
+  <li><button onclick=showDaySummary(3)>3</button></li>
+  <li><button onclick=showDaySummary(4)>4</button></li>
   <li><button onclick="showDaySummary(5)">5</button></li>
   <li><button onclick="showDaySummary(6)">6</button></li>
   <li><button onclick="showDaySummary(7)">7</button></li>
@@ -98,15 +98,15 @@
 
 <label for="days2">Choose a Day:</label>
 <select name="days2" id="days2">
-  <option value="1">01</option>
-  <option value="2">02</option>
-  <option value="3">03</option>
-  <option value="4">04</option>
-  <option value="5">05</option>
-  <option value="6">06</option>
-  <option value="7">07</option>
-  <option value="8">08</option>
-  <option value="9">09</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
   <option value="10">10</option>
   <option value="11">11</option>
   <option value="12">12</option>
@@ -134,13 +134,8 @@
 
 <h6>Past Events:</h6>
 <p id="pastEvents">past events</p>
-
 <script>
-    document.getElementById('addEventButton').addEventListener('click', addEvent);
-    //document.getElementById('allEvents').innerText = displayEvents();
-    //document.getElementById('pastEvents').innerText = removeOldEvents();
-    
-
+  document.getElementById('addEventButton').addEventListener('click', addEvent);
 </script>
 
 </body>
