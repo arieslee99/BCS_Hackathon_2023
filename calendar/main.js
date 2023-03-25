@@ -2,6 +2,7 @@
 
 const events = [];
 
+// display date and time
 function displayDateAndTime() {
     var today = new Date();
     var day = today.getDay();
@@ -32,6 +33,7 @@ function displayDateAndTime() {
     return dateString;
 }
 
+// add event to list of events
 function addEvent() {
     var eventTitle = document.getElementById('eventTitle').value;
     var eventDate = document.getElementById('eventDate').value;
@@ -43,11 +45,12 @@ function addEvent() {
     return "New Event Added: " + eventTitle + ", at " + eventTime + " on" + eventDate;
 }
 
+// display all events in list as a string
 function displayEvents() {
     var eventsAsString = "";
     for (var i = 0; events.length; i++) {
         var e = events(i);
-        var stringToAdd = "Title: " + e.title + "When: " + e.date + ", at " + e.time;
+        var stringToAdd = "Title: " + e.title + "When: " + e.date + ", at " + e.time + "\n";
         eventsAsString.concat(stringToAdd);
 
     }
