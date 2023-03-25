@@ -1,60 +1,81 @@
-// display today's date and time, from https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-1.php
-
-const events = [];
+const eventNames = [];
+const eventMonths = [];
+const eventDays = [];
+const eventNamesPast = [];
+const eventMonthsPast = [];
+const eventDaysPast = [];
+const oldEvents = "";
 
 // display date and time
 function displayDateAndTime() {
     var today = new Date();
-    var day = today.getDay();
-    var daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
-    var hour = today.getHours();
-    var minute = today.getMinutes();
-    var second = today.getSeconds();
-    var prepand = (hour >= 12) ? " PM " : " AM ";
-    hour = (hour >= 12) ? hour - 12 : hour;
-    if (hour === 0 && prepand === ' PM ') {
-        if (minute === 0 && second === 0) {
-            hour = 12;
-            prepand = ' Noon';
-        }
-        hour = 12;
-        prepand = ' PM';
-    }
-    if (hour === 0 && prepand === ' AM ') {
-        if (minute === 0 && second === 0) {
-            hour = 12;
-            prepand = ' Midnight';
-        } else {
-            hour = 12;
-            prepand = ' AM';
-        }
-    }
-    dateString = "Today is : " + daylist[day] + ". " + "Current Time : " + hour + " : " + minute + " : " + second + prepand;
-    return dateString;
+    var dayList = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+    var monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    return dayList[today.getDay()] + ", " + monthList[today.getMonth()] + " " + today.getUTCDate() + ", " + today.getHours() + ":" + today.getMinutes();
 }
 
 // add event to list of events
 function addEvent() {
-    var eventTitle = document.getElementById('eventTitle').value;
-    var eventDate = document.getElementById('eventDate').value;
-    var eventTime = document.getElementById('eventTime').value;
 
-    const event = {title:eventTitle, date:eventDate, time:eventTime};
+    var eventTitle = document.getElementById('eventTitleInput').value;
+    var eventMonth = document.getElementById('months').value;
+    var eventDay = document.getElementById('days').value;
 
-    events.push(event);
-    return "New Event Added: " + eventTitle + ", at " + eventTime + " on" + eventDate;
+    eventNames.push(eventTitle);
+    eventMonths.push(eventMonth);
+    eventDays.push(eventDay);
+    
+    document.getElementById('allEvents').innerText = displayEvents();
+
 }
+
 
 // display all events in list as a string
 function displayEvents() {
     var eventsAsString = "";
-    for (var i = 0; events.length; i++) {
-        var e = events(i);
-        var stringToAdd = "Title: " + e.title + "When: " + e.date + ", at " + e.time + "\n";
-        eventsAsString.concat(stringToAdd);
-
+    for (var i = 0; i < eventNames.length; i++) {
+        var stringToAdd = "Title: " + eventNames[i] + ". When: " + eventMonths[i] + " " + eventDays[i] + "\n";
+        eventsAsString = eventsAsString.concat(stringToAdd);
     }
     return eventsAsString;
 }
+
+// return true if event has passed
+function eventPassed(event) {
+    today = new Date();
+    eventDay = new Date(2023, event.month, event.day);
+
+    return today.getTime() >= eventDay.getTime()
+}
+
+// removes old events from list of events
+function removeOldEvents() {
+    for (var i = 0; i < eventNames.length; i++) {
+        if (eventPassed(e)) {
+            eventNamesPast.push(eventNames[i])
+            eventMonthsPast.push(eventMonths[i]);
+            eventDaysPast.push(eventDays[i]);
+            var stringToAdd = "Title: " + eventNames[i] + ". When: " + eventMonths[i] + " " + eventDays[i] + "\n";
+            eventNames.splice(i, 1);
+            eventMonths.splice(i, 1);
+            eventDays.splice(i, 1);
+            oldEvents = oldEvents.concat(stringToAdd);
+        }
+    }
+    return oldEvents;
+}
+
+function showDaySummary(day) {
+    var eventsOnDay = "";
+    var stringToAdd = "";
+    for (var i = 0; i < eventNames.length; i++) {
+        if (eventDays[i] === day) {
+            stringToAdd = "Event: " + eventNames[i] + " on March " + eventDays[i] + "\n"; 
+            eventsOnDay = eventsOnDay.concat(stringToAdd);
+        }
+    }
+    return eventsOnDay;
+}
+
 
 
