@@ -3,7 +3,6 @@ function displayDateAndTime() {
     var today = new Date();
     var day = today.getDay();
     var daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
-    console.log("Today is : " + daylist[day] + ".");
     var hour = today.getHours();
     var minute = today.getMinutes();
     var second = today.getSeconds();
@@ -26,7 +25,7 @@ function displayDateAndTime() {
             prepand = ' AM';
         }
     }
-    dateString = "Current Time : " + hour + prepand + " : " + minute + " : " + second;
+    dateString = "Today is : " + daylist[day] + ". " + "Current Time : " + hour + prepand + " : " + minute + " : " + second;
     //console.log("Current Time : " + hour + prepand + " : " + minute + " : " + second);
     return dateString;
 }
