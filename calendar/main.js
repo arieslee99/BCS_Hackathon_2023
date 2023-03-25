@@ -35,10 +35,11 @@ function addEvent() {
 function displayEvents() {
     var eventsAsString = "";
     for (var i = 0; i < eventNames.length; i++) {
-        var stringToAdd = "Title: " + eventNames[i] + ". When: " + eventMonths[i] + " " + eventDays[i] + "\n";
+        var stringToAdd = "Event: " + eventNames[i] + " on " + eventMonths[i] + " " + eventDays[i] + "\n"; 
         eventsAsString = eventsAsString.concat(stringToAdd);
     }
-    return eventsAsString;
+    document.getElementById('allEvents').innerText = "";
+    document.getElementById('allEvents').innerText = eventsAsString;
 }
 
 // given specfified day, display only events on that day
@@ -47,7 +48,7 @@ function showDaySummary(day) {
     var stringToAdd = "";
     for (var i = 0; i < eventNames.length; i++) {
         if (eventDays[i] == day) {
-            stringToAdd = "Event: " + eventNames[i] + " on March " + eventDays[i] + "\n"; 
+            stringToAdd = "Event: " + eventNames[i] + " on " + eventMonths[i] + " " + eventDays[i] + "\n"; 
             eventsOnDay = eventsOnDay.concat(stringToAdd);
         }
     }
