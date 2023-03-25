@@ -29,4 +29,12 @@ function displayDateAndTime() {
     return dateString;
 }
 
+function addEvent() {
+    var eventTitle = document.getElementById('eventTitle').value;
+    var eventDate = document.getElementById('eventDate').value;
+    var eventTime = document.getElementById('eventTime').value;
+
+    return "New Event Added: " + eventTitle + ", at " + eventTime + " on" + eventDate;
+}
+
 
