@@ -13,8 +13,16 @@
         <textarea class="bubble">sample task</textarea>
         <textarea class="bubble">sample task</textarea>
         <textarea class="bubble">sample task</textarea>
-    
-    
+        <textarea class="bubble">sample task</textarea>
+        <textarea class="bubble">sample task</textarea>
+        <button class="add-note" id="button">+</button>
+        <script>
+            function addNote() {
+                var textarea = document.createElement("textarea");
+                document.getElementById("app").appendChild(textarea)
+            }
+            document.getElementById("button").addEventListener('click', addNote);
+        </script>
     </div>
 </body>
 </html>

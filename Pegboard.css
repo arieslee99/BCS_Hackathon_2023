@@ -19,10 +19,16 @@ body {
 .add-note {
     height: 100px;
     width: 100px;
-    border: none;
     border-radius: 10px;
+    border-color: darksalmon;
     gap: 100px;
+    display:
 }
+
+.add-note:active {
+    border-color:indianred;
+}
+
 
 .bubble {
     display: grid;

@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="En">
+<head>
+    <meta charset="UTF-8">
+    <title>Calender</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="calender.css"/>
+</head>
+
+<body>
+<h1>CSS Calender</h1>
+
+<div class="month">      
+  <ul>
+    <li class="prev">❮</li>
+    <li class="next">❯</li>
+    <li style="text-align:center">
+      March<br>
+      <span style="font-size:18px">2023</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days">  
+  <li><button onclick="showDaySummary(1)">1</button></li>
+  <li><button onclick="showDaySummary(2)">2</button></li>
+  <li><button onclick="showDaySummary(3)">3</button></li>
+  <li><button onclick="showDaySummary(4)">4</button></li>
+  <li><button onclick="showDaySummary(5)">5</button></li>
+  <li><button onclick="showDaySummary(6)">6</button></li>
+  <li><button onclick="showDaySummary(7)">7</button></li>
+  <li><button onclick="showDaySummary(8)">8</button></li>
+  <li><button onclick="showDaySummary(9)">9</button></li>
+  <li><button onclick="showDaySummary(10)">10</button></li>
+  <li><button onclick="showDaySummary(11)">11</button></li>
+  <li><button onclick="showDaySummary(12)">12</button></li>
+  <li><button onclick="showDaySummary(13)">13</button></li>
+  <li><button onclick="showDaySummary(14)">14</button></li>
+  <li><button onclick="showDaySummary(15)">15</button></li>
+  <li><button onclick="showDaySummary(16)">16</button></li>
+  <li><button onclick="showDaySummary(17)">17</button></li>
+  <li><button onclick="showDaySummary(18)">18</button></li>
+  <li><button onclick="showDaySummary(19)">19</button></li>
+  <li><button onclick="showDaySummary(20)">20</button></li>
+  <li><button onclick="showDaySummary(21)">21</button></li>
+  <li><button onclick="showDaySummary(22)">22</button></li>
+  <li><button onclick="showDaySummary(23)">23</button></li>
+  <li><button onclick="showDaySummary(24)">24</button></li>
+  <li><button onclick="showDaySummary(25)">25</button></li>
+  <li><button onclick="showDaySummary(26)">26</button></li>
+  <li><button onclick="showDaySummary(27)">27</button></li>
+  <li><button onclick="showDaySummary(28)">28</button></li>
+  <li><button onclick="showDaySummary(29)">29</button></li>
+  <li><button onclick="showDaySummary(30)">30</button></li>
+  <li><button onclick="showDaySummary(31)">31</button></li>
+</ul>
+
+<h1>Calendar</h1>
+    <h2>Today</h2>
+    <p id="dateandtime"></p>
+    <script>
+        document.getElementById("dateandtime").innerText = displayDateAndTime();
+    </script>
+
+    <h2>Events</h2>
+    <p id="allEvents">My Events</p>
+
+<h4>Add new event</h4>
+<label>Name:</label>
+<input type="text" id="eventTitleInput">
+
+<label for="months">Choose a month:</label>
+<select name="months" id="months">
+  <option value="January">January</option>
+  <option value="February">February</option>
+  <option value="March">March</option>
+  <option value="April">April</option>
+  <option value="May">May</option>
+  <option value="June">June</option>
+  <option value="July">July</option>
+  <option value="August">August</option>
+  <option value="September">September</option>
+  <option value="October">October</option>
+  <option value="November">November</option>
+  <option value="December">December</option>
+</select>
+
+<label for="days2">Choose a Day:</label>
+<select name="days2" id="days2">
+  <option value="1">01</option>
+  <option value="2">02</option>
+  <option value="3">03</option>
+  <option value="4">04</option>
+  <option value="5">05</option>
+  <option value="6">06</option>
+  <option value="7">07</option>
+  <option value="8">08</option>
+  <option value="9">09</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+</select>
+<button class="myClass" id="addEventButton">Add Event</button>
+
+<h6>Past Events:</h6>
+<p id="pastEvents">past events</p>
+
+<script>
+    document.getElementById('addEventButton').addEventListener('click', addEvent);
+    //document.getElementById('allEvents').innerText = displayEvents();
+    //document.getElementById('pastEvents').innerText = removeOldEvents();
+    
+
+</script>
+
+</body>
+</html>

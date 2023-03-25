@@ -1,6 +1,6 @@
-const eventNames = [];
-const eventMonths = [];
-const eventDays = [];
+const eventNames = ["doctor", "dentist", "party"];
+const eventMonths = ["March", "March", "March"];
+const eventDays = [3, 5, 5];
 const eventNamesPast = [];
 const eventMonthsPast = [];
 const eventDaysPast = [];
@@ -19,13 +19,13 @@ function addEvent() {
 
     var eventTitle = document.getElementById('eventTitleInput').value;
     var eventMonth = document.getElementById('months').value;
-    var eventDay = document.getElementById('days').value;
+    var eventDay = document.getElementById('days2').value;
 
     eventNames.push(eventTitle);
     eventMonths.push(eventMonth);
     eventDays.push(eventDay);
     
-    document.getElementById('allEvents').innerText = displayEvents();
+    // document.getElementById('allEvents').innerText = displayEvents();
 
 }
 
@@ -48,22 +48,22 @@ function eventPassed(event) {
     return today.getTime() >= eventDay.getTime()
 }
 
-// removes old events from list of events
-function removeOldEvents() {
-    for (var i = 0; i < eventNames.length; i++) {
-        if (eventPassed(e)) {
-            eventNamesPast.push(eventNames[i])
-            eventMonthsPast.push(eventMonths[i]);
-            eventDaysPast.push(eventDays[i]);
-            var stringToAdd = "Title: " + eventNames[i] + ". When: " + eventMonths[i] + " " + eventDays[i] + "\n";
-            eventNames.splice(i, 1);
-            eventMonths.splice(i, 1);
-            eventDays.splice(i, 1);
-            oldEvents = oldEvents.concat(stringToAdd);
-        }
-    }
-    return oldEvents;
-}
+// // removes old events from list of events
+// function removeOldEvents() {
+//     for (var i = 0; i < eventNames.length; i++) {
+//         if (eventPassed(e)) {
+//             eventNamesPast.push(eventNames[i])
+//             eventMonthsPast.push(eventMonths[i]);
+//             eventDaysPast.push(eventDays[i]);
+//             var stringToAdd = "Title: " + eventNames[i] + ". When: " + eventMonths[i] + " " + eventDays[i] + "\n";
+//             eventNames.splice(i, 1);
+//             eventMonths.splice(i, 1);
+//             eventDays.splice(i, 1);
+//             oldEvents = oldEvents.concat(stringToAdd);
+//         }
+//     }
+//     return oldEvents;
+// }
 
 function showDaySummary(day) {
     var eventsOnDay = "";
@@ -74,7 +74,9 @@ function showDaySummary(day) {
             eventsOnDay = eventsOnDay.concat(stringToAdd);
         }
     }
-    return eventsOnDay;
+    //return eventsOnDay;
+    document.getElementById('allEvents').innerText = "";
+    document.getElementById('allEvents').innerText = eventsOnDay;
 }
 
 
