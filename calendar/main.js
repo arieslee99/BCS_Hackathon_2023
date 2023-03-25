@@ -9,7 +9,12 @@ function displayDateAndTime() {
     var today = new Date();
     var dayList = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
     var monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    return dayList[today.getDay()] + ", " + monthList[today.getMonth()] + " " + today.getUTCDate() + ", " + today.getHours() + ":" + today.getMinutes();
+    if ((today.getMinutes() == 0) || (today.getMinutes() == 1) || (today.getMinutes() == 2) || (today.getMinutes() == 3) || (today.getMinutes() == 4) || (today.getMinutes() == 5)
+    || (today.getMinutes() == 6) || (today.getMinutes() == 7) || (today.getMinutes() == 8) || (today.getMinutes() == 9)) {
+        return dayList[today.getDay()] + ", " + monthList[today.getMonth()] + " " + today.getUTCDate() + ", " + today.getHours() + ":0" + today.getMinutes();
+    } else {
+        return dayList[today.getDay()] + ", " + monthList[today.getMonth()] + " " + today.getUTCDate() + ", " + today.getHours() + ":" + today.getMinutes();
+    }
 }
 
 // add event to list of events
