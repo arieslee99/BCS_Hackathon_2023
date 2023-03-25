@@ -7,25 +7,29 @@
     <title>Alert Notification</title>
     <link rel="stylesheet" href="alert.css">
     <script src="https://kit.fontawesome.com/a43e548d54.js" crossorigin="anonymous"></script>
-    <script src="alert.js"></script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
         </style>
     
 </head>
 <body>
-    <button> Show Upcoming Tasks</button>
-    <div class="alert" id="alert">
-        
+    <button onclick="show()">Show Upcoming Tasks</button>
+    <!-- <script src="alert.js"></script> -->
+    <div class="alert" id="alert" style="display:none;">  
         <span class="fas fa-exclamation-circle"></span>
         <span class="msg">Warning: You have an exam in one week!</span>
-        <span class="close-btn">
+        <span class="close-btn" onclick="this.parentElement.style.display='none';">
             <span class="fas fa-times"></span>
-            
         </span>
     </div>
 
-    
+    <script>
+        function show() {
+            document.getElementById('alert').style.display = "block";
+        }
+    </script>
+
     <p></p>
     
     

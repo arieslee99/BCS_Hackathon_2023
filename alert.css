@@ -27,9 +27,9 @@ button {
 
 .alert {
     visibility: visible;
-    -webkit-animation: fadeIn 4s;
+    -webkit-animation: fadeIn 2s;
 
-    animation: fadeIn 2s
+    animation: fadeIn 1s
     
 }
 
