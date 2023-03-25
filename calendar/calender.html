@@ -6,7 +6,9 @@
     <title>Calender</title>
     <script src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="calender.css"/>
+</head>
 
+<body>
 <h1>CSS Calender</h1>
 
 <div class="month">      
@@ -34,34 +36,34 @@
   <li><button onclick="showDaySummary(1)">1</button></li>
   <li><button onclick="showDaySummary(2)">2</button></li>
   <li><button onclick="showDaySummary(3)">3</button></li>
-  <li><button onclick="displayevent()">4</button></li>
-  <li><button onclick="displayevent()">5</button></li>
-  <li><button onclick="functionToExecute()">6</button></li>
-  <li><button onclick="functionToExecute()">7</button></li>
-  <li><button onclick="functionToExecute()">8</button></li>
-  <li><button onclick="functionToExecute()">9</button></li>
-  <li><button onclick="functionToExecute()">10</button></li>
-  <li><button onclick="functionToExecute()">11</button></li>
-  <li><button onclick="functionToExecute()">12</button></li>
-  <li><button onclick="functionToExecute()">13</button></li>
-  <li><button onclick="functionToExecute()">14</button></li>
-  <li><button onclick="functionToExecute()">15</button></li>
-  <li><button onclick="functionToExecute()">16</button></li>
-  <li><button onclick="functionToExecute()">17</button></li>
-  <li><button onclick="functionToExecute()">18</button></li>
-  <li><button onclick="functionToExecute()">19</button></li>
-  <li><button onclick="functionToExecute()">20</button></li>
-  <li><button onclick="functionToExecute()">21</button></li>
-  <li><button onclick="functionToExecute()">22</button></li>
-  <li><button onclick="functionToExecute()">23</button></li>
-  <li><button onclick="functionToExecute()">24</button></li>
-  <li><button onclick="functionToExecute()">25</button></li>
-  <li><button onclick="functionToExecute()">26</button></li>
-  <li><button onclick="functionToExecute()">27</button></li>
-  <li><button onclick="functionToExecute()">28</button></li>
-  <li><button onclick="functionToExecute()">29</button></li>
-  <li><button onclick="functionToExecute()">30</button></li>
-  <li><button onclick="functionToExecute()">31</button></li>
+  <li><button onclick="showDaySummary(4)">4</button></li>
+  <li><button onclick="showDaySummary(5)">5</button></li>
+  <li><button onclick="showDaySummary(6)">6</button></li>
+  <li><button onclick="showDaySummary(7)">7</button></li>
+  <li><button onclick="showDaySummary(8)">8</button></li>
+  <li><button onclick="showDaySummary(9)">9</button></li>
+  <li><button onclick="showDaySummary(10)">10</button></li>
+  <li><button onclick="showDaySummary(11)">11</button></li>
+  <li><button onclick="showDaySummary(12)">12</button></li>
+  <li><button onclick="showDaySummary(13)">13</button></li>
+  <li><button onclick="showDaySummary(14)">14</button></li>
+  <li><button onclick="showDaySummary(15)">15</button></li>
+  <li><button onclick="showDaySummary(16)">16</button></li>
+  <li><button onclick="showDaySummary(17)">17</button></li>
+  <li><button onclick="showDaySummary(18)">18</button></li>
+  <li><button onclick="showDaySummary(19)">19</button></li>
+  <li><button onclick="showDaySummary(20)">20</button></li>
+  <li><button onclick="showDaySummary(21)">21</button></li>
+  <li><button onclick="showDaySummary(22)">22</button></li>
+  <li><button onclick="showDaySummary(23)">23</button></li>
+  <li><button onclick="showDaySummary(24)">24</button></li>
+  <li><button onclick="showDaySummary(25)">25</button></li>
+  <li><button onclick="showDaySummary(26)">26</button></li>
+  <li><button onclick="showDaySummary(27)">27</button></li>
+  <li><button onclick="showDaySummary(28)">28</button></li>
+  <li><button onclick="showDaySummary(29)">29</button></li>
+  <li><button onclick="showDaySummary(30)">30</button></li>
+  <li><button onclick="showDaySummary(31)">31</button></li>
 </ul>
 
 <h1>Calendar</h1>
@@ -94,8 +96,8 @@
   <option value="December">December</option>
 </select>
 
-<label for="days">Choose a Day:</label>
-<select name="days" id="days">
+<label for="days2">Choose a Day:</label>
+<select name="days2" id="days2">
   <option value="1">01</option>
   <option value="2">02</option>
   <option value="3">03</option>
@@ -135,9 +137,11 @@
 
 <script>
     document.getElementById('addEventButton').addEventListener('click', addEvent);
-    document.getElementById('allEvents').innerText = displayEvents();
-    document.getElementById('pastEvents').innerText = removeOldEvents();
+    //document.getElementById('allEvents').innerText = displayEvents();
+    //document.getElementById('pastEvents').innerText = removeOldEvents();
+    
 
 </script>
 
+</body>
 </html>
