@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <title>Notes on Pegboard</title>
+    <a href="./calendar/calender.html">Calendar</a>
     <link rel="stylesheet" href="Pegboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scriptForTeamboard.js">defer</script>
@@ -26,13 +27,14 @@
         <textarea class="bubble">sample task</textarea>
         <script>
             function addNote() {
-                var textarea = document.createElement("input");
+                var textarea = document.createElement("textarea");
                 var input = document.getElementById('textInput');
                 textarea.value = input.value;
+                textarea.className = "bubble";
                 document.getElementById("app").appendChild(textarea)
             }
             document.getElementById("pink-button").addEventListener('click', addNote);
         </script>
     </div>
-    <a href="./calendar/calender.html">Calendar</a>
+    
 </html>
