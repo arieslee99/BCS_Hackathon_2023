@@ -1,6 +1,5 @@
-console.log("Hello");
-function taskCollection() {
-    var taskName = document.getElementById('task').value;
-    document.getElementById("output").innerText = taskName;
+
+function addNote() {
+     
 }
-document.getElementById('button').addEventListener('click',taskCollection);
+

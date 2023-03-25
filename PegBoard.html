@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Notes on Pegboard</title>
+    <link rel="stylesheet" href="Pegboard.css">
+    <script src="scriptForTeamboard.js">defer</script>
+</head>
+<body>
+    <div id="app">
+        <textarea class="bubble">sample task</textarea>
+        <textarea class="bubble">sample task</textarea>
+        <textarea class="bubble">sample task</textarea>
+        <textarea class="bubble">sample task</textarea>
+        <textarea class="bubble">sample task</textarea>
+        <button class="add-note" id="button">+</button>
+        <script>
+            function addNote() {
+                var textarea = document.createElement("textarea");
+                document.getElementById("app").appendChild(textarea)
+            }
+            document.getElementById("button").addEventListener('click', addNote);
+        </script>
+    </div>
+</body>
+</html>
