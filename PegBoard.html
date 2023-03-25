@@ -26,9 +26,10 @@
         <textarea class="bubble">sample task</textarea>
         <script>
             function addNote() {
-                var textarea = document.createElement("input");
+                var textarea = document.createElement("textarea");
                 var input = document.getElementById('textInput');
                 textarea.value = input.value;
+                textarea.className = "bubble";
                 document.getElementById("app").appendChild(textarea)
             }
             document.getElementById("pink-button").addEventListener('click', addNote);
