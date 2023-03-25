@@ -26,7 +26,9 @@ function displayDateAndTime() {
             prepand = ' AM';
         }
     }
-    console.log("Current Time : " + hour + prepand + " : " + minute + " : " + second);
+    dateString = "Current Time : " + hour + prepand + " : " + minute + " : " + second;
+    //console.log("Current Time : " + hour + prepand + " : " + minute + " : " + second);
+    return dateString;
 }
 
 
