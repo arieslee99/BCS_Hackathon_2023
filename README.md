@@ -1,4 +1,4 @@
-# BCS Hackathon 2023 - Workflow Whiz
+# BCS Hacks 2023 - Workflow Whiz
 
 As students, we have very busy schedules. Some currently available task managers have many features and functionalities, which can be a bit overwhelming. Creating a schedule or to do list should be quick and easy - it shouldn't be as difficult as studying for our exam next week!
 
@@ -22,4 +22,4 @@ This web app was developed in HTML and JavaScript - all completely new to us Wiz
 
 For future implementation, we would like to complete the calendar section for all months (not just March), and have the user be able to scroll through them using the arrows at the top. 
 
-We would also like to add automations. If, for example, we know we have to do laundry every Friday, we would like to be able to input that somewhere, and have the app automatically add to our To Do list / Events every Friday that we have to do laundry.
+We would also like to add automation. If, for example, we know we have to do laundry every Friday, we would like to be able to input that somewhere, and have the app automatically add to our To Do list / Events every Friday that we have to do laundry.
