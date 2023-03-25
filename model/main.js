@@ -25,8 +25,7 @@ function displayDateAndTime() {
             prepand = ' AM';
         }
     }
-    dateString = "Today is : " + daylist[day] + ". " + "Current Time : " + hour + prepand + " : " + minute + " : " + second;
-    //console.log("Current Time : " + hour + prepand + " : " + minute + " : " + second);
+    dateString = "Today is : " + daylist[day] + ". " + "Current Time : " + hour + " : " + minute + " : " + second + prepand;
     return dateString;
 }
 
